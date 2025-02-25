@@ -1,6 +1,7 @@
 package com.example.recycleview11_2_25;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
-    private DataItem [] mData;
+    private ArrayList<DataItem> mData;
     private Context mContext;
-    public MyAdapter(Context context, DataItem[]data  ) {
+    public MyAdapter(Context context, ArrayList<DataItem>data ) {
         this.mContext=context;
         this.mData=data;
     }
@@ -41,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
 
     @Override
     public int getItemCount() {
-        return mData.length;
+        return mData.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
