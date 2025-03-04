@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    private int n=50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         ArrayList<DataItem> dataList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < n; i++) {
             dataList.add(new DataItem(String.valueOf(i)));
         }
 

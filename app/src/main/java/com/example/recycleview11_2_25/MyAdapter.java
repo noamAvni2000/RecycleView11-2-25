@@ -2,6 +2,7 @@ package com.example.recycleview11_2_25;
 
 import android.content.Context;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
             }
         });
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mData.remove(holder.getAdapterPosition());
+                notifyItemRangeRemoved(holder.getAdapterPosition(), 1);
+            }
+        });
     }
 
     @Override
